@@ -1,2 +1,30 @@
+//create file
+// const fs = require("fs")
 
-const fs = require("fs");
+// console.log("fs wirte", fs.writeFile)
+
+// fs.writeFile("text1.txt", "Archivo creado desde node", "utf8", (err) => {
+//   // Logica negativa
+//   if(err) {
+//     console.log("err", err)
+//     return //Salte
+//   }
+
+//   // Si no, todo lo demas
+//   console.log("El archivo fue creado exito")
+// })
+
+
+//read file
+
+const fs = require("fs")
+
+fs.readFile("./color.js", "utf8", (err, data) =>{
+    if(err) {
+            console.log("err", err)
+            return //Salte
+          }
+    console.log(data)
+})
+
+
