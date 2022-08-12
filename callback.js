@@ -1,3 +1,5 @@
+
+//Calbacks
 /***
  * Pastel
  * 1 - Leer la receta
@@ -7,144 +9,147 @@
  * 5 - Decorar el paster
  */
 
- const pastel = {
-    recetaLeida : false,
-    ingredientesConseguidos: false,
-    masaPreparada: false,
-    pastelHorneado: false,
-    pastelDecorado: false
-}
+// const pastel = {
+//     recetaLeida: false,
+//     ingredientesConseguidos: false,
+//     masaPreparada: false,
+//     pastelHorneado: false,
+//     pastelDecorado: false
+// }
 
-const recetaLeida = (recetaAprendida, callback) =>{
+// const recetaLeida = (recetaAprendida, callback) => {
 
-    let error = null;
+//     let error = null;
 
-    setTimeout(()=>{
+//     setTimeout(() => {
 
-        recetaAprendida.recetaLeida = true;
+//         recetaAprendida.recetaLeida = true;
 
-        if (!recetaAprendida.recetaLeida){
-            error="No se aprendio la receta";
-        }
-        callback(error,recetaAprendida)
+//         if (!recetaAprendida.recetaLeida) {
+//             error = "No se aprendio la receta";
+//         }
+//         callback(error, recetaAprendida)
 
-    }, 2000);
+//     }, 2000);
 
-};
+// };
 
-const ingredientesConseguidos = (tenemosIngredientes, callback) =>{
+// const ingredientesConseguidos = (tenemosIngredientes, callback) => {
 
-    let error = null;
+//     let error = null;
 
-    setTimeout(()=>{
+//     setTimeout(() => {
 
-        tenemosIngredientes.ingredientesConseguidos = true;
+//         tenemosIngredientes.ingredientesConseguidos = true;
 
-        if (!tenemosIngredientes.ingredientesConseguidos){
-            error="No se aprendio la receta";
-        }
-        callback(error,tenemosIngredientes)
+//         if (!tenemosIngredientes.ingredientesConseguidos) {
+//             error = "No alcanzo para lo basico";
+//         }
+//         callback(error, tenemosIngredientes)
 
-    }, 3000);
+//     }, 3000);
 
-};
+// };
 
-const masaLista = (masa, callback) =>{
+// const masaLista = (masa, callback) => {
 
-    let error = null;
+//     let error = null;
 
-    setTimeout(()=>{
+//     setTimeout(() => {
 
-        masa.masaPreparada = true;
+//         masa.masaPreparada = true;
 
-        if (!masa.masaPreparada){
-            error="No se aprendio la receta";
-        }
-        callback(error,masa)
+//         if (!masa.masaPreparada) {
+//             error = "Hechamos a perder la masa T.T";
+//         }
+//         callback(error, masa)
 
-    }, 5000);
+//     }, 5000);
 
-};
+// };
 
-const pastelHorneado = (panHorneado, callback) =>{
+// const pastelHorneado = (panHorneado, callback) => {
 
-    let error = null;
+//     let error = null;
 
-    setTimeout(()=>{
+//     setTimeout(() => {
 
-        panHorneado.pastelHorneado = true;
+//         panHorneado.pastelHorneado = true;
 
-        if (!panHorneado.pastelHorneado){
-            error="No se aprendio la receta";
-        }
-        callback(error,panHorneado)
+//         if (!panHorneado.pastelHorneado) {
+//             error = "Se quema la cocina";
+//         }
+//         callback(error, panHorneado)
 
-    }, 2000);
+//     }, 2000);
 
-};
+// };
 
-const pastelDecorado = (pastelBonito, callback) =>{
+// const pastelDecorado = (pastelBonito, callback) => {
 
-    let error = null;
+//     let error = null;
 
-    setTimeout(()=>{
+//     setTimeout(() => {
 
-        pastelBonito.pastelDecorado = true;
+//         pastelBonito.pastelDecorado = true;
 
-        if (!pastelBonito.pastelDecorado){
-            error="No se aprendio la receta";
-        }
-        callback(error,pastelBonito)
+//         if (!pastelBonito.pastelDecorado) {
+//             error = "Hay mas merengue que pan";
+//         }
+//         callback(error, pastelBonito)
 
-    }, 1000);
+//     }, 1000);
 
-};
-
-
-
-    
+// };
 
 
-recetaLeida({...pastel }, (error, tenerReceta) => {
-    
-    if (error) {
-        console.log("error:", error);
-        return; 
-    }
-
-    
-    ingredientesConseguidos({ ...tenerReceta }, (error, tenerIngredientes) => {
-        if (error) {
-            console.log("error", error);
-            return;
-        }
-
-        
-        masaLista({ ...tenerIngredientes }, (error, tenermasa) => {
-            if (error) {
-                console.log("error", error);
-                return;
-            }
-
-            
-            pastelHorneado({...tenermasa}, (error, iniciarHorneado) => {
-                if(error) {
-                    console.log("error", error)
-                    return
-                }
 
 
-                pastelDecorado({...iniciarHorneado}, (error, finalizarDecoracion) =>{
 
-                    if (error) {
-                        console.log("error", error)
-                        return
-                    }
 
-                    console.log("Exito hora de comer pastel", finalizarDecoracion)
-                });
-                
-            });
-        });
-    });
-});
+// recetaLeida({ ...pastel }, (error, tenerReceta) => {
+
+//     if (error) {
+//         console.log("error:", error);
+//         return;
+//     }
+
+
+//     ingredientesConseguidos({ ...tenerReceta }, (error, tenerIngredientes) => {
+//         if (error) {
+//             console.log("error", error);
+//             return;
+//         }
+
+
+//         masaLista({ ...tenerIngredientes }, (error, tenermasa) => {
+//             if (error) {
+//                 console.log("error", error);
+//                 return;
+//             }
+
+
+//             pastelHorneado({ ...tenermasa }, (error, iniciarHorneado) => {
+//                 if (error) {
+//                     console.log("error", error)
+//                     return
+//                 }
+
+
+//                 pastelDecorado({ ...iniciarHorneado }, (error, finalizarDecoracion) => {
+
+//                     if (error) {
+//                         console.log("error", error)
+//                         return
+//                     }
+
+//                     console.log("Exito hora de comer pastel", finalizarDecoracion)
+//                 });
+
+//             });
+//         });
+//     });
+// });
+
+//Promesas
+
