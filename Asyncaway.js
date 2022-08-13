@@ -42,7 +42,7 @@ const recetaLeida = (recetaAprendida) => {
   const ingredientesConseguidos = (ingredientesObtenidos) => {
     return new Promise((resolve, reject) => {
         setTimeout(() => {
-            ingredientesObtenidos.ingredientesConseguidos = false;
+            ingredientesObtenidos.ingredientesConseguidos = true;
   
             if (!ingredientesObtenidos.ingredientesConseguidos) {
                 reject("No alcanzo para los ingredientes");
@@ -100,7 +100,7 @@ const recetaLeida = (recetaAprendida) => {
   };
 
   
-  const recetaObtenida = async () => {
+  const hacerPastel = async () => {
     try{
         const recetaPreparada = await recetaLeida({...pastel})
         console.log("Receta Lista", recetaPreparada)
@@ -117,6 +117,8 @@ const recetaLeida = (recetaAprendida) => {
         const pastelExitoso = await pastelDecorado({...pastelcaliente})
         console.log("Hora de comer pastel", pastelExitoso)
 
+        return pastelExitoso
+
     } catch (reject){
         console.log(reject)
     }
@@ -124,4 +126,9 @@ const recetaLeida = (recetaAprendida) => {
 }
 
 
-recetaObtenida();
+hacerPastel().then((pastelExitoso)=>{
+console.log("Como hacer un pastol con un retorno en el then", pastelExitoso)
+})
+.catch((err)=>{
+ console.log("Ocurrio un error", err)
+})
