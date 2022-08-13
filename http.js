@@ -1,10 +1,22 @@
 
+const express = require("express")
+const app = express()
+// const http = require("http")
 
-const http = require("http")
+app.get("/", (request,response) =>{
 
-const server = http.createServer((request,response)=>{
+    response.write("hola bienvenido al get home")
+    response.end()
+})
+
+
+app.listen("8080", ()=>{
+
+    console.log("servidor Escuchando")
+})
+// const server = http.createServer((request,response)=>{
     
-    const { url, method } = request
+//     const { url, method } = request
 
     // if(method === "GET" && url === "/") {
     //     response.write("Bienvenido estas en el get, en home estas leyendo")
@@ -26,34 +38,34 @@ const server = http.createServer((request,response)=>{
     //   response.end()
 
 
-    const endpoints ={
+//     const endpoints ={
 
-        "GET":{
-            "/":"Bienvenidos Get en Home",
-            "/profile":"Bienvenido estas en tu perfil",
-        },
-        "POST":{
-            "/":"Bienvenidos Post en Home",
-            "/user":"Bienvenido estas en tu perfil",
-        },
-        "PATCH":{
-            "/":"Bienvenidos Patch en Home",
-            "/profile":"Bienvenido estas en tu perfil",
-        },
-        "PUT":{
-            "/":"Bienvenidos Put en Home",
-            "/profile":"Bienvenido estas en tu perfil",
-        },
-        "DELETE":{
-            "/":"Bienvenidos Delete en Home",
-            "/profile":"Bienvenido estas en tu perfil",
-        },
-    }
+//         "GET":{
+//             "/":"Bienvenidos Get en Home",
+//             "/profile":"Bienvenido estas en tu perfil",
+//         },
+//         "POST":{
+//             "/":"Bienvenidos Post en Home",
+//             "/user":"Bienvenido estas en tu perfil",
+//         },
+//         "PATCH":{
+//             "/":"Bienvenidos Patch en Home",
+//             "/profile":"Bienvenido estas en tu perfil",
+//         },
+//         "PUT":{
+//             "/":"Bienvenidos Put en Home",
+//             "/profile":"Bienvenido estas en tu perfil",
+//         },
+//         "DELETE":{
+//             "/":"Bienvenidos Delete en Home",
+//             "/profile":"Bienvenido estas en tu perfil",
+//         },
+//     }
       
-    response.write(endpoints[method][url])
-    response.end()
-})
+//     response.write(endpoints[method][url])
+//     response.end()
+// })
 
-server.listen(8080, ()=>{
-    console.log("Server listening....")
-})
+// server.listen(8080, ()=>{
+//     console.log("Server listening....")
+// })
