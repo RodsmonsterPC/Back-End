@@ -9,6 +9,35 @@ app.get("/", (request,response) =>{
     response.end()
 })
 
+app.get("/profile", (request,response) =>{
+
+    response.write("hola bienvenido al perfil")
+    response.end()
+})
+
+app.post("/", (request,response) =>{
+
+    response.write("hola bienvenido al post")
+    response.end()
+})
+
+app.patch("/", (request,response) =>{
+
+    response.write("hola bienvenido al patch")
+    response.end()
+})
+
+app.put("/", (request,response) =>{
+
+    response.write("hola bienvenido al put")
+    response.end()
+})
+
+app.delete("/", (request,response) =>{
+
+    response.write("hola bienvenido al delete")
+    response.end()
+})
 
 app.listen("8080", ()=>{
 
